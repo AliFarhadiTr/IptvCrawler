@@ -481,14 +481,14 @@
             // 
             this.progressBar1.Location = new System.Drawing.Point(12, 533);
             this.progressBar1.Name = "progressBar1";
-            this.progressBar1.Size = new System.Drawing.Size(909, 25);
+            this.progressBar1.Size = new System.Drawing.Size(909, 14);
             this.progressBar1.TabIndex = 3;
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(12, 564);
+            this.progressBar2.Location = new System.Drawing.Point(12, 553);
             this.progressBar2.Name = "progressBar2";
-            this.progressBar2.Size = new System.Drawing.Size(909, 36);
+            this.progressBar2.Size = new System.Drawing.Size(909, 27);
             this.progressBar2.TabIndex = 4;
             // 
             // groupBox4
