@@ -38,3 +38,5 @@ F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.csproj.Gener
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.csproj.CopyComplete
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.exe
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.pdb
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\Octokit.dll
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\Octokit.xml

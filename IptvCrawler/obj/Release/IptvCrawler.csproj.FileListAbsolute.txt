@@ -31,10 +31,11 @@ F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\EntityFramework.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\EntityFramework.SqlServer.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\RestSharp.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\System.Data.SQLite.xml
-F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.csprojAssemblyReference.cache
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.Form1.resources
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.Properties.Resources.resources
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.csproj.GenerateResource.cache
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.csproj.CopyComplete
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.exe
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.pdb
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\Octokit.dll
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\Octokit.xml

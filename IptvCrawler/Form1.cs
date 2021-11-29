@@ -1,5 +1,4 @@
 ﻿using DB;
-using Octokit;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -56,7 +55,7 @@ namespace IptvCrawler
 
             LoadSettigs();
 
-            textBox1.Enabled = textBox2.Enabled = checkBox1.Checked;
+            textBox1.Enabled = checkBox1.Checked;
 
         }
 
@@ -75,7 +74,7 @@ namespace IptvCrawler
             richTextBox3.Text = settings["append_first"];
             richTextBox4.Text = settings["append_all"];
 
-            numericUpDown2.Value =int.Parse(settings["min_quality"]);
+            numericUpDown2.Value = int.Parse(settings["min_quality"]);
             numericUpDown3.Value = int.Parse(settings["max_quality"]);
             comboBox1.SelectedIndex = int.Parse(settings["status"]);
             numericUpDown1.Value = int.Parse(settings["delay"]);
@@ -83,8 +82,7 @@ namespace IptvCrawler
             add_count_checkBox.Checked = bool.Parse(settings["add_count"]);
 
             checkBox1.Checked = bool.Parse(settings["git"]);
-            textBox1.Text = settings["git_user"];
-            textBox2.Text = settings["git_pass"];
+            textBox1.Text = settings["git_token"];
 
             string[] countries = settings["countries"].Split(',');
             LoadCountries(countries);
@@ -110,17 +108,9 @@ namespace IptvCrawler
                 },
                 new Dictionary<string, string>
                 {
-                    { "name","git_user"}
+                    { "name","git_token"}
                 });
-            db.Table("configs").Update(
-                new Dictionary<string, string> {
-                    { "value",textBox2.Text},
-                    { "updated_at",DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}
-                },
-                new Dictionary<string, string>
-                {
-                    { "name","git_pass"}
-                });
+
 
             db.Table("configs").Update(
                 new Dictionary<string, string> {
@@ -249,9 +239,9 @@ namespace IptvCrawler
 
         }
 
-        private void LoadCountries(string[] selected=null)
+        private void LoadCountries(string[] selected = null)
         {
-            if(countries_file == "countries.csv") countries_file = AppDomain.CurrentDomain.BaseDirectory + countries_file;
+            if (countries_file == "countries.csv") countries_file = AppDomain.CurrentDomain.BaseDirectory + countries_file;
             var lines = File.ReadLines(countries_file);
 
             checkedListBox1.Items.Clear();
@@ -268,13 +258,13 @@ namespace IptvCrawler
                     ch.CheckState = CheckState.Unchecked;
 
                     bool not_add = true;
-                    if (selected!=null)
+                    if (selected != null)
                     {
                         foreach (var item in selected)
                         {
-                            if (item== cl[0])
+                            if (item == cl[0])
                             {
-                                checkedListBox1.Items.Add(ch,true);
+                                checkedListBox1.Items.Add(ch, true);
                                 not_add = false;
                                 break;
                             }
@@ -285,7 +275,7 @@ namespace IptvCrawler
                     {
                         checkedListBox1.Items.Add(ch, false);
                     }
-                    
+
 
                 }
             }
@@ -478,6 +468,9 @@ namespace IptvCrawler
             checkedListBox1.Enabled = enable;
 
             add_count_checkBox.Enabled = enable;
+
+            checkBox1.Enabled = enable;
+            textBox1.Enabled = enable;
         }
 
         //start
@@ -536,13 +529,15 @@ namespace IptvCrawler
             Properties.Settings.Default.find = richTextBox1.Text;
             Properties.Settings.Default.replace = richTextBox2.Text;
             Properties.Settings.Default.Save();
+
             */
+
             new Task(() =>
             {
 
                 try
                 {
-                    Main(selected_countries,max, min_quality, max_quality, status, delay, find, replace,append_first,append_all);
+                    Main(selected_countries, max, min_quality, max_quality, status, delay, find, replace, append_first, append_all);
 
                 }
                 catch (Exception ex)
@@ -573,7 +568,7 @@ namespace IptvCrawler
             busy = false;
         }
 
-        private void Main(Dictionary<string, string> selected_countries, int max, int min_quality, int max_quality, int status, int delay, String[] find, String[] replace,string append_first, string append_all)
+        private void Main(Dictionary<string, string> selected_countries, int max, int min_quality, int max_quality, int status, int delay, String[] find, String[] replace, string append_first, string append_all)
         {
             foreach (var country in selected_countries)
             {
@@ -608,7 +603,7 @@ namespace IptvCrawler
 
                         if (!busy)
                         {
-                            Saver(request, country.Key, find, replace,append_first,append_all);
+                            Saver(request, country.Key, find, replace, append_first, append_all);
                             MessageBox.Show("عملیات توسط کاربر لغو شد.", "پایان", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
                             return;
                         }
@@ -708,23 +703,95 @@ namespace IptvCrawler
                     if (cnt >= max) break;
                 }
 
-                Saver(request,country.Key,find,  replace, append_first, append_all);
+                Saver(request, country.Key, find, replace, append_first, append_all);
             }
+
+            this.Invoke(new Action(() =>
+            {
+                if (checkBox1.Checked)
+                {
+                    try
+                    {
+                        Upload2Git(textBox1.Text);
+                        MessageBox.Show("فایل با موفقیت بر روی گیت هاب قرار گرفت.", "موفق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+
+                    }
+                    catch (Exception ex)
+                    {
+
+                        Logger(ex,"github upload error!");
+                        MessageBox.Show("خطای در آپلود فایل بر روی گیت هاب رخ داده است.", "خطا در گیت هاب", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
+
+                    }
+
+                }
+                
+            }));
 
             MessageBox.Show("کلیه موارد با موفقیت دریافت شد.", "موفق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
 
         }
 
-        private void Upload2Git(string user,string pass)
+        private void Upload2Git(string token)
         {
-            var basicAuth = new Credentials(user, pass);
-            var client = new GitHubClient(new ProductHeaderValue("my-cool-app"));
+
+            var basicAuth = new Octokit.Credentials(token);
+            var client = new Octokit.GitHubClient(new Octokit.ProductHeaderValue("iptvscraper_by_alifarhadi"));
             client.Credentials = basicAuth;
 
-        
+            var new_reps = new Octokit.NewRepository(DateTime.Now.ToString("yyyy"));
+            new_reps.Visibility = Octokit.RepositoryVisibility.Public;
+
+            var all_repos = client.Repository.GetAllForCurrent();
+            all_repos.Wait();
+
+            bool rep_found = false;
+            long rep_id = 0;
+            foreach (var rep in all_repos.Result)
+            {
+                if (rep.Name == new_reps.Name)
+                {
+                    rep_found = true;
+                    rep_id = rep.Id;
+                    break;
+                }
+            }
+
+            string month = DateTime.Now.ToString("MMM");
+            string file_name = Path.GetFileName(out_file);
+            if (!rep_found)
+            {
+                var rep_t = client.Repository.Create(new_reps);
+                rep_t.Wait();
+                rep_id = rep_t.Result.Id;
+            }
+
+            var waiter = client.Repository.Content.GetAllContents(rep_id, month);
+            waiter.Wait();
+
+            string txt = File.ReadAllText(out_file);
+
+            foreach (var item in waiter.Result)
+            {
+                if(item.Name== file_name)
+                {
+                    var up_file1 = new Octokit.UpdateFileRequest("uploaded by script:" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txt,item.Sha);
+                    var file_res1 = client.Repository.Content.UpdateFile(rep_id, month + "/" + file_name, up_file1);
+                    file_res1.Wait();
+                    System.Diagnostics.Process.Start(file_res1.Result.Content.DownloadUrl);
+                    return;
+                }
+            }
+            
+            var up_file = new Octokit.CreateFileRequest("uploaded by script:" + DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss"), txt);
+            var file_res=client.Repository.Content.CreateFile(rep_id,  month+ "/" + file_name, up_file);
+            file_res.Wait();
+            string raw=file_res.Result.Content.DownloadUrl;
+            System.Diagnostics.Process.Start(raw);
+
         }
 
-        private void Saver(RestRequest request,string country, String[] find, String[] replace,string append_first,string append_all)
+        private void Saver(RestRequest request, string country, String[] find, String[] replace, string append_first, string append_all)
         {
 
             try
@@ -735,13 +802,13 @@ namespace IptvCrawler
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
                     RegexOptions options = RegexOptions.IgnoreCase | RegexOptions.Singleline;
-                    string pattern= @"href=""[^""]*?my_list/([^""]+?)""[^<>]+?title=""Download list""";
+                    string pattern = @"href=""[^""]*?my_list/([^""]+?)""[^<>]+?title=""Download list""";
 
                     MatchCollection links = Regex.Matches(response.Content, pattern, options);
 
                     request.Resource = "my_list/" + links[0].Groups[1].ToString();
 
-                    byte[] data=client.DownloadData(request);
+                    byte[] data = client.DownloadData(request);
 
                     string content = System.Text.Encoding.UTF8.GetString(data);
 
@@ -755,8 +822,8 @@ namespace IptvCrawler
                     {
                         content = content.Replace("#EXTM3U\n", "");
                         content = content.Replace("#PLAYLIST:iptvcat.com\n", "");
-                        content = append_all + "\n" + content ;
-                        if(add_count_checkBox.Checked)content = Regex.Replace(content, @"group-title=""[^""]*?""", String.Format(@"group-title=""{0}({1})""", country, titles.Count));
+                        content = append_all + "\n" + content;
+                        if (add_count_checkBox.Checked) content = Regex.Replace(content, @"group-title=""[^""]*?""", String.Format(@"group-title=""{0}({1})""", country, titles.Count));
                         else content = Regex.Replace(content, @"group-title=""[^""]*?""", String.Format(@"group-title=""{0}""", country));
 
                     }
@@ -786,19 +853,19 @@ namespace IptvCrawler
                             content = content.Replace("#PLAYLIST:iptvcat.com\n", "#PLAYLIST:iptvcat.com\n" +
                             append_first + "\n");
                         }
-                        
+
                     }
 
-                    content=content.Replace("#__COUNTRY__#", country);
+                    content = content.Replace("#__COUNTRY__#", country);
 
-                    for (int i=0;i<find.Length;i++)
+                    for (int i = 0; i < find.Length; i++)
                     {
-                        content=content.Replace(find[i], replace[i]);
+                        content = content.Replace(find[i], replace[i]);
                     }
-                    
+
                     File.AppendAllText(out_file, content);
 
-                    string new_name= Regex.Replace(out_file, @"[0-9]+? channels\.m3u", total.ToString()+" channels.m3u");
+                    string new_name = Regex.Replace(out_file, @"[0-9]+? channels\.m3u", total.ToString() + " channels.m3u");
                     File.Delete(new_name); // Delete the existing file if exists
                     File.Move(out_file, new_name); // Rename the oldFileName into newFileName
                     out_file = new_name;
@@ -872,7 +939,12 @@ namespace IptvCrawler
 
         private void checkBox1_CheckedChanged(object sender, EventArgs e)
         {
-            textBox1.Enabled = textBox2.Enabled = ((CheckBox)sender).Checked;
+            textBox1.Enabled = ((CheckBox)sender).Checked;
+        }
+
+        private void label25_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)

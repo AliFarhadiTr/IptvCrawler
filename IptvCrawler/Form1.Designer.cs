@@ -76,11 +76,9 @@
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
             this.groupBox6 = new System.Windows.Forms.GroupBox();
-            this.checkBox1 = new System.Windows.Forms.CheckBox();
-            this.label25 = new System.Windows.Forms.Label();
-            this.label26 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -622,8 +620,6 @@
             // groupBox6
             // 
             this.groupBox6.Controls.Add(this.textBox1);
-            this.groupBox6.Controls.Add(this.textBox2);
-            this.groupBox6.Controls.Add(this.label26);
             this.groupBox6.Controls.Add(this.label25);
             this.groupBox6.Controls.Add(this.checkBox1);
             this.groupBox6.ForeColor = System.Drawing.Color.DarkOrchid;
@@ -633,6 +629,24 @@
             this.groupBox6.TabIndex = 7;
             this.groupBox6.TabStop = false;
             this.groupBox6.Text = "تنظیمات گیت هاب";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(624, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(637, 29);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "توکن:";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
             // 
             // checkBox1
             // 
@@ -644,41 +658,6 @@
             this.checkBox1.Text = "فعال";
             this.checkBox1.UseVisualStyleBackColor = true;
             this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
-            // 
-            // label25
-            // 
-            this.label25.AutoSize = true;
-            this.label25.Location = new System.Drawing.Point(637, 29);
-            this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(61, 13);
-            this.label25.TabIndex = 1;
-            this.label25.Text = "نام کاربری:";
-            // 
-            // label26
-            // 
-            this.label26.AutoSize = true;
-            this.label26.Location = new System.Drawing.Point(238, 29);
-            this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(47, 13);
-            this.label26.TabIndex = 1;
-            this.label26.Text = "رمزعبور:";
-            this.label26.Click += new System.EventHandler(this.label26_Click);
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(7, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox2.Size = new System.Drawing.Size(225, 20);
-            this.textBox2.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Location = new System.Drawing.Point(406, 26);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.textBox1.Size = new System.Drawing.Size(225, 20);
-            this.textBox1.TabIndex = 2;
             // 
             // Form1
             // 
@@ -695,7 +674,8 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MinimumSize = new System.Drawing.Size(949, 634);
+            this.MaximumSize = new System.Drawing.Size(949, 689);
+            this.MinimumSize = new System.Drawing.Size(949, 689);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ربات خزنده";
@@ -767,8 +747,6 @@
         private System.Windows.Forms.CheckBox add_count_checkBox;
         private System.Windows.Forms.Label label24;
         private System.Windows.Forms.GroupBox groupBox6;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.CheckBox checkBox1;
         private System.Windows.Forms.TextBox textBox1;
