@@ -31,7 +31,6 @@ F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\EntityFramework.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\EntityFramework.SqlServer.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\RestSharp.xml
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\System.Data.SQLite.xml
-F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.csprojAssemblyReference.cache
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.Form1.resources
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.Properties.Resources.resources
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.csproj.GenerateResource.cache
@@ -40,3 +39,4 @@ F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.exe
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.pdb
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\Octokit.dll
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\Octokit.xml
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Debug\IptvCrawler.csprojAssemblyReference.cache

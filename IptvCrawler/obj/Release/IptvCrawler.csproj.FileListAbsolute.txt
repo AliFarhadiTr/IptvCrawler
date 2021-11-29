@@ -39,3 +39,4 @@ F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.exe
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.pdb
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\Octokit.dll
 F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\bin\Release\Octokit.xml
+F:\GitHub\IptvCrawler\IptvCrawler\IptvCrawler\obj\Release\IptvCrawler.csprojAssemblyReference.cache
