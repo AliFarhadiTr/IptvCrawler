@@ -1,4 +1,5 @@
 ﻿using DB;
+using Octokit;
 using RestSharp;
 using System;
 using System.Collections.Generic;
@@ -22,7 +23,7 @@ namespace IptvCrawler
     {
         private CookieContainer cookies;
         RestClient client;
-        private const string version = "V1.8";
+        private const string version = "V2.0";
         public static string errorlog;
         private bool busy = false;
         private int log_limit = 100;
@@ -55,6 +56,8 @@ namespace IptvCrawler
 
             LoadSettigs();
 
+            textBox1.Enabled = textBox2.Enabled = checkBox1.Checked;
+
         }
 
         private void LoadSettigs()
@@ -78,6 +81,11 @@ namespace IptvCrawler
             numericUpDown1.Value = int.Parse(settings["delay"]);
             numericUpDown4.Value = int.Parse(settings["max_chanel"]);
             add_count_checkBox.Checked = bool.Parse(settings["add_count"]);
+
+            checkBox1.Checked = bool.Parse(settings["git"]);
+            textBox1.Text = settings["git_user"];
+            textBox2.Text = settings["git_pass"];
+
             string[] countries = settings["countries"].Split(',');
             LoadCountries(countries);
 
@@ -85,6 +93,34 @@ namespace IptvCrawler
 
         private void SaveSettigs()
         {
+
+            db.Table("configs").Update(
+                new Dictionary<string, string> {
+                    { "value",checkBox1.Checked.ToString()},
+                    { "updated_at",DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}
+                },
+                new Dictionary<string, string>
+                {
+                    { "name","git"}
+                });
+            db.Table("configs").Update(
+                new Dictionary<string, string> {
+                    { "value",textBox1.Text},
+                    { "updated_at",DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}
+                },
+                new Dictionary<string, string>
+                {
+                    { "name","git_user"}
+                });
+            db.Table("configs").Update(
+                new Dictionary<string, string> {
+                    { "value",textBox2.Text},
+                    { "updated_at",DateTime.Now.ToString("yyyy/MM/dd HH:mm:ss")}
+                },
+                new Dictionary<string, string>
+                {
+                    { "name","git_pass"}
+                });
 
             db.Table("configs").Update(
                 new Dictionary<string, string> {
@@ -679,6 +715,15 @@ namespace IptvCrawler
 
         }
 
+        private void Upload2Git(string user,string pass)
+        {
+            var basicAuth = new Credentials(user, pass);
+            var client = new GitHubClient(new ProductHeaderValue("my-cool-app"));
+            client.Credentials = basicAuth;
+
+        
+        }
+
         private void Saver(RestRequest request,string country, String[] find, String[] replace,string append_first,string append_all)
         {
 
@@ -818,6 +863,16 @@ namespace IptvCrawler
             SaveSettigs();
             MessageBox.Show("تنظیمات با موفقیت ذخیره شد.", "موفق", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button1, MessageBoxOptions.RightAlign | MessageBoxOptions.RtlReading);
 
+        }
+
+        private void label26_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            textBox1.Enabled = textBox2.Enabled = ((CheckBox)sender).Checked;
         }
 
         private void checkedListBox1_SelectedValueChanged(object sender, EventArgs e)
