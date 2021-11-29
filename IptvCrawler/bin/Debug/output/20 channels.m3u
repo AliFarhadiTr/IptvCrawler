@@ -1,0 +1,51 @@
+#EXTM3U
+#EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/ogw/ADGmqu-mfXA-oq04H82TcIWTi4HIuoDHyAjC1LvyGSJJ" group-title="Premium IPTV & ZalTV",Long term IPTV & ZalTV special offer
+    http://www.mene77.ir/zt/ads-11626999.mp4
+#EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/ogw/ADGmqu-mfXA-oq04H82TcIWTi4HIuoDHyAjC1LvyGSJJ" group-title="Europe(5)",Long term Sport IPTV & ZalTV
+    http://www.mene77.ir/zt/ads-11626.mp4
+#EXTINF:0 tvg-country="AL" tvg-logo="" group-title="Europe(5)",24 KITCHEN
+http://lotintv4k.com:80/MahmudAslami/IQ3KTIBIQA/3422?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AL" tvg-logo="" group-title="Europe(5)",24 Kitchen HD AL
+http://iptvworld.nl:2095/cQnDW5Nn/syqSAe3g/102613?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AL" tvg-logo="" group-title="Europe(5)",360 TuneBox AL
+http://iptvworld.nl:2095/cQnDW5Nn/syqSAe3g/102614?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AL" tvg-logo="" group-title="Europe(5)",7 HD
+http://aziptv.live:80/Hdservers/Valendsuk/6317?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AL" tvg-logo="" group-title="Europe(5)",A TV
+http://aziptv.live:80/Hdservers/Valendsuk/24646?checkedby:iptvcat.com
+#EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/ogw/ADGmqu-mfXA-oq04H82TcIWTi4HIuoDHyAjC1LvyGSJJ" group-title="North America(5)",Long term Sport IPTV & ZalTV
+    http://www.mene77.ir/zt/ads-11626.mp4
+#EXTINF:0 tvg-country="BS" tvg-logo="https://znsbahamas.com/wp-content/uploads/2017/12/ZNS-PL-1.png" group-title="North America(5)",ZNS TV (1080p)
+https://cloud.streamcomedia.com/znstv/smil:znstv_streams.smil/playlist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="CA" tvg-logo="https://i.imgur.com/k9M5ydW.png" group-title="North America(5)",5AAB TV
+http://158.69.124.9:1935/5aabtv/5aabtv/chunklist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="CA" tvg-logo="https://i.imgur.com/k9M5ydW.png" group-title="North America(5)",5AAB TV
+http://158.69.124.9:1935/5aabtv/5aabtv/playlist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="CA" tvg-logo="" group-title="North America(5)",A&E
+http://lotintv4k.com:80/MahmudAslami/IQ3KTIBIQA/6471?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="CA" tvg-logo="" group-title="North America(5)",A&E
+http://emtv1.xyz:80/NeHosting/rrty53gwty6422/64014.ts?checkedby:iptvcat.com
+#EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/ogw/ADGmqu-mfXA-oq04H82TcIWTi4HIuoDHyAjC1LvyGSJJ" group-title="South America(5)",Long term Sport IPTV & ZalTV
+    http://www.mene77.ir/zt/ads-11626.mp4
+#EXTINF:0 tvg-country="AR" tvg-logo="https://i.imgur.com/6miysb8.png" group-title="South America(5)",24/7 Canal de Noticias
+https://panel.dattalive.com/6605140/6605140/playlist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AR" tvg-logo="https://i.imgur.com/6miysb8.png" group-title="South America(5)",24/7 Canal de Noticias,CN 24/7
+http://59c5c86e10038.streamlock.net:1935/6605140/6605140/playlist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AR" tvg-logo="https://i.imgur.com/wCQJuaU.jpg" group-title="South America(5)",5RTV Santa Fe
+http://api.new.livestream.com/accounts/22636012/events/8242619/live.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AR" tvg-logo="https://i.imgur.com/wCQJuaU.jpg" group-title="South America(5)",5RTV Santa Fe
+https://api.new.livestream.com/accounts/22636012/events/8242619/live.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="AR" tvg-logo="https://i.imgur.com/kujnLsO.png" group-title="South America(5)",5TV (Corrientes) (480p)
+http://www.coninfo.net:1935/tvcinco/live1/playlist.m3u8?checkedby:iptvcat.com
+#EXTINF:-1 tvg-logo="https://lh3.googleusercontent.com/ogw/ADGmqu-mfXA-oq04H82TcIWTi4HIuoDHyAjC1LvyGSJJ" group-title="Arab Countries(5)",Long term Sport IPTV & ZalTV
+    http://www.mene77.ir/zt/ads-11626.mp4
+#EXTINF:0 tvg-country="DZ" tvg-logo="" group-title="Arab Countries(5)",AL HAYAT rtm
+rtmp://media.islamexplained.com:1935/live/_definst_mp4:ahme.stream_360p?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DZ" tvg-logo="" group-title="Arab Countries(5)",DIJAH  rtm
+rtmp://91.134.145.75/?gmswf=/Dijlah&checkedby:iptvcat.com
+#EXTINF:0 tvg-country="DZ" tvg-logo="" group-title="Arab Countries(5)",Dijlah TV  jordan rtm
+rtmp://91.134.145.75/Dijlah?speed=1/?speed=1&checkedby:iptvcat.com
+#EXTINF:0 tvg-country="BH" tvg-logo="https://i.imgur.com/WUvqhAZ.png" group-title="Arab Countries(5)",BAHRAIN TV,BH | Bahrain TV
+http://185.105.4.106:1935/live/Bahrain%20TV/chunklist.m3u8?checkedby:iptvcat.com
+#EXTINF:0 tvg-country="BH" tvg-logo="https://i.imgur.com/XZcLqWk.jpg" group-title="Arab Countries(5)",Bahrain TV
+http://185.105.4.106:1935/live/Bahrain%20TV/playlist.m3u8?checkedby:iptvcat.com

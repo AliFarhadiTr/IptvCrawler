@@ -70,11 +70,15 @@
             this.label21 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.groupBox5 = new System.Windows.Forms.GroupBox();
+            this.label24 = new System.Windows.Forms.Label();
             this.richTextBox4 = new System.Windows.Forms.RichTextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.richTextBox3 = new System.Windows.Forms.RichTextBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.label24 = new System.Windows.Forms.Label();
+            this.groupBox6 = new System.Windows.Forms.GroupBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label25 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
@@ -84,6 +88,7 @@
             this.groupBox3.SuspendLayout();
             this.groupBox4.SuspendLayout();
             this.groupBox5.SuspendLayout();
+            this.groupBox6.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
@@ -380,7 +385,7 @@
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.ForeColor = System.Drawing.Color.DarkGreen;
-            this.groupBox3.Location = new System.Drawing.Point(12, 395);
+            this.groupBox3.Location = new System.Drawing.Point(12, 468);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(909, 59);
             this.groupBox3.TabIndex = 2;
@@ -474,14 +479,14 @@
             // 
             // progressBar1
             // 
-            this.progressBar1.Location = new System.Drawing.Point(12, 460);
+            this.progressBar1.Location = new System.Drawing.Point(12, 533);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(909, 25);
             this.progressBar1.TabIndex = 3;
             // 
             // progressBar2
             // 
-            this.progressBar2.Location = new System.Drawing.Point(12, 491);
+            this.progressBar2.Location = new System.Drawing.Point(12, 564);
             this.progressBar2.Name = "progressBar2";
             this.progressBar2.Size = new System.Drawing.Size(909, 36);
             this.progressBar2.TabIndex = 4;
@@ -565,6 +570,15 @@
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "تغییرات";
             // 
+            // label24
+            // 
+            this.label24.ForeColor = System.Drawing.Color.DarkBlue;
+            this.label24.Location = new System.Drawing.Point(7, 162);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(822, 18);
+            this.label24.TabIndex = 1;
+            this.label24.Text = "برای نمایش نام کشور از #__COUNTRY__# استفاده کنید";
+            // 
             // richTextBox4
             // 
             this.richTextBox4.Location = new System.Drawing.Point(7, 96);
@@ -603,20 +617,54 @@
             this.label22.Text = "متن مربوط به کل شبکه ها:";
             this.label22.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
-            // label24
+            // groupBox6
             // 
-            this.label24.ForeColor = System.Drawing.Color.DarkBlue;
-            this.label24.Location = new System.Drawing.Point(7, 162);
-            this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(822, 18);
-            this.label24.TabIndex = 1;
-            this.label24.Text = "برای نمایش نام کشور از #__COUNTRY__# استفاده کنید";
+            this.groupBox6.Controls.Add(this.textBox1);
+            this.groupBox6.Controls.Add(this.label25);
+            this.groupBox6.Controls.Add(this.checkBox1);
+            this.groupBox6.ForeColor = System.Drawing.Color.DarkOrchid;
+            this.groupBox6.Location = new System.Drawing.Point(12, 395);
+            this.groupBox6.Name = "groupBox6";
+            this.groupBox6.Size = new System.Drawing.Size(909, 67);
+            this.groupBox6.TabIndex = 7;
+            this.groupBox6.TabStop = false;
+            this.groupBox6.Text = "تنظیمات گیت هاب";
+            // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(7, 26);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.textBox1.Size = new System.Drawing.Size(624, 20);
+            this.textBox1.TabIndex = 2;
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Location = new System.Drawing.Point(637, 29);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(34, 13);
+            this.label25.TabIndex = 1;
+            this.label25.Text = "توکن:";
+            this.label25.Click += new System.EventHandler(this.label25_Click);
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Location = new System.Drawing.Point(846, 28);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(49, 17);
+            this.checkBox1.TabIndex = 0;
+            this.checkBox1.Text = "فعال";
+            this.checkBox1.UseVisualStyleBackColor = true;
+            this.checkBox1.CheckedChanged += new System.EventHandler(this.checkBox1_CheckedChanged);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(933, 595);
+            this.ClientSize = new System.Drawing.Size(933, 650);
+            this.Controls.Add(this.groupBox6);
             this.Controls.Add(this.groupBox5);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.progressBar2);
@@ -626,8 +674,8 @@
             this.Controls.Add(this.groupBox1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
-            this.MaximumSize = new System.Drawing.Size(949, 634);
-            this.MinimumSize = new System.Drawing.Size(949, 634);
+            this.MaximumSize = new System.Drawing.Size(949, 689);
+            this.MinimumSize = new System.Drawing.Size(949, 689);
             this.Name = "Form1";
             this.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.Text = "ربات خزنده";
@@ -644,6 +692,8 @@
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
             this.groupBox5.ResumeLayout(false);
+            this.groupBox6.ResumeLayout(false);
+            this.groupBox6.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -696,6 +746,10 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.CheckBox add_count_checkBox;
         private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.GroupBox groupBox6;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.TextBox textBox1;
     }
 }
 
