@@ -1,3 +1,0 @@
-*************1399/05/19 11:11:39*************
-Could not find file 'F:\Parscodes\C#\IptvCrawler\IptvCrawler\IptvCrawler\bin\Debug\output\14 channels.m3u'. =>Line: 0 =>Cause: country:'Africa' Saver
-------------------------------------

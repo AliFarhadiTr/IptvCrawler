@@ -1,4 +1,0 @@
-*************2021/06/16 10:21:33*************
-Specified argument was out of the range of valid values.
-Parameter name: i =>Line: 0 =>Cause: country:'North America' Saver
-------------------------------------
