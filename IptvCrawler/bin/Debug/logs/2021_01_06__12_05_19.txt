@@ -1,0 +1,6 @@
+*************2021/01/06 12:06:10*************
+Cross-thread operation not valid: Control 'richTextBox3' accessed from a thread other than the thread it was created on. =>Line: 0 =>Cause: country:'North America' Saver
+------------------------------------
+*************2021/01/06 12:06:44*************
+Cross-thread operation not valid: Control 'richTextBox3' accessed from a thread other than the thread it was created on. =>Line: 0 =>Cause: country:'South America' Saver
+------------------------------------

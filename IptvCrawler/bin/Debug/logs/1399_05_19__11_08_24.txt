@@ -1,0 +1,24 @@
+*************1399/05/19 11:08:34*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:35*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:36*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:37*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:38*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:40*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:41*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------
+*************1399/05/19 11:08:42*************
+main:response wrong status=>0 =>Line: 467 =>Cause: country:'[Africa, africa]' foreach (var country in selected_countries)
+------------------------------------

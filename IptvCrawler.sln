@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29709.97
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IptvCrawler", "IptvCrawler\IptvCrawler.csproj", "{D91DB73C-75C9-4160-BF35-8C0B069F9ED5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D91DB73C-75C9-4160-BF35-8C0B069F9ED5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D91DB73C-75C9-4160-BF35-8C0B069F9ED5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D91DB73C-75C9-4160-BF35-8C0B069F9ED5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D91DB73C-75C9-4160-BF35-8C0B069F9ED5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {747C415E-D2FA-469F-B193-C968D8F0253D}
+	EndGlobalSection
+EndGlobal
